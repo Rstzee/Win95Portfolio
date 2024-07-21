@@ -1,0 +1,1609 @@
+@font-face {
+    font-family:"Inconsolata";
+    src: url("font/Inconsolata-.ttf") format("truetype");
+  }
+
+body {
+font-family: "Inconsolata", sans-serif;
+margin: 0;  
+padding: 0; 
+height: 100vh;  
+background-attachment: fixed;
+cursor: url(http://www.rw-designer.com/cursor-extern.php?id=151727), default;
+}
+#mainbody {
+    position: relative;
+    background-color: #02918a;
+    height: 100vh;
+    width: 100hw;
+}
+/* #region header */
+#header{
+    background-color: #B9b0b0;
+    position: fixed;
+    z-index: 1000;
+    height: 30px;
+    width: 100%;
+    top: 0;
+
+}
+
+#OStitle{
+    top:5px;
+    left: 5px;
+    margin-top: 0;
+    font-weight: bold;
+    position: absolute;
+}
+/* #endregion header */
+
+/* #region taskbar */
+#taskbar {
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    background-color: #b9b9b9;
+    font-weight: bold;
+    z-index: 100;
+}
+
+
+    #datetimeContainer{
+        position: absolute;
+        width: 190px;
+        height: 36px;
+        top: 2px;
+        right: 4px;
+        border-top: 1px solid rgba(0, 0, 0, 0.5);
+        border-left: 1px solid rgba(0, 0, 0, 0.5);
+        border-bottom: 1px solid #ffffff;
+        border-right: 1px solid #ffffff;
+    }
+        #datetime {
+            position: absolute;
+            right: 6px;
+            bottom: -7px;
+        }
+
+#startButton{
+    position: fixed;
+    left: 5px;
+    bottom: 3px;
+    background-color: #f3f3f3;
+    z-index: 101;
+    width: 60px;
+    height: 32px;
+     box-shadow:1px 1px 0px rgba(0, 0, 0, 1); 
+     border-top: 3px solid white;
+     border-left: 3px solid white;
+     cursor: pointer;
+}
+    #startButton:hover{
+        opacity: 80%;
+        }
+    #startButton:active{
+        transform: scale(0.95); 
+        transition: transform 0.1s ease; 
+        color: #292929;
+        border-top: 3px solid black;
+        border-left: 3px solid black;
+        box-shadow:1px 1px 0px rgb(255, 255, 255)
+    }
+    #startButtonPopup{
+        background-color: #b9b9b9;
+        height: 350px;
+        width: 220px;
+        z-index: 10000;
+        position: fixed;
+        left: 0;
+        bottom: 40px;
+        display: none;
+    }
+    #startCloseButton{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: none;
+        background-color: rgb(0, 0, 0, .000001);
+        border: none;
+    }
+
+    #verticalTitleStart{
+        position: absolute;
+        width: 30px;
+        height: calc(100% - 2px);
+        z-index: 10001;
+        top: 2px; 
+        left: 2px;
+        background:  rgba(0, 0, 255, 1); 
+    }
+        #startTitleText{
+            position: absolute;
+            transform: rotate(270deg);
+            bottom: 25px;
+            left: -30px;
+            font-size: larger;
+            font-weight: bolder;
+            color: #ffffff  ;
+        }
+    #startAppGridContainer{
+        position: absolute;
+        width: calc(100% - 35px);
+        height: calc(100% - 2px);
+        z-index: 10001;
+        left: 33px;
+        top: 2px; 
+        background: #b9b9b9; 
+    
+       
+        display: flex;
+        gap: 0px;
+        
+        flex-direction: column-reverse;
+    }
+        .appStartIcon{
+            position: relative;
+            left: 10px;
+            top: 3px;
+            width: 20px;
+            height: 20px;
+           
+        }
+     
+        #startAppShutdown{
+            margin-top:1px;
+            margin-bottom: 1px;
+            position: relative;
+            display: block;
+            background-color: #b9b9b9;
+            cursor: pointer;
+            width: 100%;
+            height: 30px;   
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+            border-top: 1.5px solid #7a7a7a;
+           
+        }
+        #startAppAboutme{
+            position: relative;
+            display: block;
+            background-color: #b9b9b9;
+            cursor: pointer;
+            width: 100%;
+            height: 30px;   
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+           
+        }
+        #startAppCV{
+            position: relative;
+            display: block;
+            background-color: #b9b9b9;
+            cursor: pointer;
+            width: 100%;
+            height: 30px;   
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+           
+        }
+        #startAppCertifications{
+            position: relative;
+            display: block;
+            background-color: #b9b9b9;
+            cursor: pointer;
+            width: 100%;
+            height: 30px;   
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+           
+        }
+        #startAppProjects{
+            position: relative;
+            display: block;
+            background-color: #b9b9b9;
+            cursor: pointer;
+            width: 100%;
+            height: 30px;   
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+           
+        }
+        #startAppSocials{
+            position: relative;
+            display: block;
+            background-color: #b9b9b9;
+            cursor: pointer;
+            width: 100%;
+            height: 30px;   
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+        }
+        #startAppRecycleBin{
+            position: relative;
+            display: block;
+            background-color: #b9b9b9;
+            cursor: pointer;
+            width: 100%;
+            height: 30px;   
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+        }
+            .appStartText{
+                font-weight: bold;
+                position: relative;
+                left: 35px;
+                bottom: 35px;
+            }
+
+
+#taskbarAppContainer{
+    position: absolute;
+    left: 80px;
+    bottom: 3px;
+    display: flex; 
+    gap: 5px;
+}
+    
+    .taskbarIcon {
+        position: relative;
+        left: 2px;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+    }
+
+        #taskbarAboutme {
+            position: relative;
+            display: none;
+            background-color: #b9b9b9;
+        
+            border-top: 3px solid rgb(255, 255, 255);
+            border-right: 3px solid rgba(0, 0, 0, 0.5);
+            border-left: 3px solid #ffffff;
+            border-bottom: 3px solid rgba(0, 0, 0, .75);
+            cursor: pointer;
+            width: 150px;
+            height: 27px;
+            bottom: -1px;
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+            
+        }
+
+        #taskbarSocials {
+            position: relative;
+            display: none;
+            background-color: #b9b9b9;
+        
+            border-top: 3px solid rgb(255, 255, 255);
+            border-right: 3px solid rgba(0, 0, 0, 0.5);
+            border-left: 3px solid #ffffff;
+            border-bottom: 3px solid rgba(0, 0, 0, .75);
+            cursor: pointer;
+            width: 150px;
+            height: 27px;
+            bottom: -1px;
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+        }
+        #taskbarCV {
+            position: relative;
+            display: none;
+            background-color: #b9b9b9;
+        
+            border-top: 3px solid rgb(255, 255, 255);
+            border-right: 3px solid rgba(0, 0, 0, 0.5);
+            border-left: 3px solid #ffffff;
+            border-bottom: 3px solid rgba(0, 0, 0, .75);
+            cursor: pointer;
+            width: 150px;
+            height: 27px;
+            bottom: -1px;
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+        }
+        #taskbarCertifications{
+            position: relative;
+            display: none;
+            background-color: #b9b9b9;
+        
+            border-top: 3px solid rgb(255, 255, 255);
+            border-right: 3px solid rgba(0, 0, 0, 0.5);
+            border-left: 3px solid #ffffff;
+            border-bottom: 3px solid rgba(0, 0, 0, .75);
+            cursor: pointer;
+            width: 150px;
+            height: 27px;
+            bottom: -1px;
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+        }
+        #taskbarRecyclebin{
+            position: relative;
+            display: none;
+            background-color: #b9b9b9;
+        
+            border-top: 3px solid rgb(255, 255, 255);
+            border-right: 3px solid rgba(0, 0, 0, 0.5);
+            border-left: 3px solid #ffffff;
+            border-bottom: 3px solid rgba(0, 0, 0, .75);
+            cursor: pointer;
+            width: 150px;
+            height: 27px;
+            bottom: -1px;
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+        }
+        #taskbarProjects{
+            position: relative;
+            display: none;
+            background-color: #b9b9b9;
+        
+            border-top: 3px solid rgb(255, 255, 255);
+            border-right: 3px solid rgba(0, 0, 0, 0.5);
+            border-left: 3px solid #ffffff;
+            border-bottom: 3px solid rgba(0, 0, 0, .75);
+            cursor: pointer;
+            width: 150px;
+            height: 27px;
+            bottom: -1px;
+            text-align: left;
+            text-decoration: none;
+            color: inherit; 
+        }
+
+/* #endregion taskbar */
+
+
+
+
+/* #region appButtons */
+
+.squareSample{
+    position: static;
+    top: 0;
+    left: 0;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+  
+}
+
+.gridContainer{
+    position: absolute;
+    display: grid;
+    gap: 10px;
+    top: 40px;
+    left: 10px;
+    grid-template-columns: 10;
+    grid-template-rows: 22;
+}
+
+
+.buttonexe{
+    position: absolute;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    border: none;
+    left: 13px;
+}
+
+
+.buttonexe:hover{
+opacity: 80%;
+}
+
+
+.buttonexe:active{
+    transform: scale(0.95); 
+    transition: transform 0.1s ease; 
+}
+
+
+.buttontext{
+    position:relative;
+    background-color: rgba(0, 0, 0, .35);
+    text-align: center;
+    color: #fff6f6;
+    top: 37px;
+
+}
+/* #endregion appButtons */
+
+
+
+
+/* #region popupTitle */
+
+
+.allPopup{
+    z-index: 10;
+}
+.minimizeButton{
+    position: absolute;
+    width: 14px;
+    border-bottom: 2px solid black;
+    left: 2px;
+    bottom: 2px;
+}
+
+.maximizeButton{
+    position: absolute;
+    width: 10px;
+    height: 9px;
+    border-top: solid 4px black;
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    left: 2px;
+    bottom: 2px;
+}
+.windowedButton2{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-top: solid 2px black;
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    left: 6px;
+    bottom: 6px;
+    
+    background-color: #f3f3f3;
+    
+}
+.windowedButton1{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-top: solid 2px black;
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    left: 2px;
+    bottom: 2px;
+    z-index: 1;
+    background-color: #f3f3f3;
+}
+/* #endregion popupTitle */
+
+/* #region aboutAboutMe */
+#AboutMePopup{
+    left: 200px;
+    top: 100px;
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    margin: -1 -1 -1 -1;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 10;
+    background-color: #b9b9b9;
+    
+}
+    #AboutMePopupTitleBox{
+        position: relative;
+        margin: 2px;
+        height: 30px;
+        width:auto;
+        border: none;
+        display: flex;
+    
+        background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0.3)); 
+    }
+    #AboutMePopupTitle{
+        position: relative;
+        left: 5px;
+    
+        top: -10px;
+    
+        font-weight: bolder;
+        color:#f3f3f3;
+    
+    }
+
+    #AboutMeMinimizeButton {
+        position: absolute;
+        top: 5px;
+        right: 52px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+        
+    }
+
+    #AboutMeCloseButton {
+        position: absolute;
+        top: 5px;
+        right: 4px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+
+
+        text-align: center;
+        text-decoration: none;
+        color: inherit; 
+        
+    }
+    #fullscreenPopupAboutMe{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+    #originalSizePopupAboutme{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1); 
+        width: 18px;
+        height: 18px;
+        display: none;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+#AboutMeInsideBox{
+    position: inherit;
+    top: 36px;
+    border: 1px solid #292929;
+    width: auto;
+    height: calc(100% - 40px);
+    margin-top: 0px;
+    margin-left: 2px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    background-color: #fff6f6;
+    overflow-y: scroll;
+    scrollbar-color: #b9b9b9 #fff6f6;
+    display: block;
+ 
+}
+/* #endregion aboutAboutMe */
+/* #region Socials */
+#SocialsPopup{
+    left: 750px;
+    top: 150px;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    margin: -1 -1 -1 -1;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 10;
+    background-color: #b9b9b9;
+    
+}
+    #SocialsPopupTitleBox{
+        position: relative;
+        margin: 2px;
+        height: 30px;
+        width:auto;
+        border: none;
+        display: flex;
+    
+        background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0.3)); 
+    }
+    #SocialsPopupTitle{
+        position: relative;
+        left: 5px;
+    
+        top: -10px;
+    
+        font-weight: bolder;
+        color:#f3f3f3;
+    
+    }
+    #SocialsMinimizeButton {
+        position: absolute;
+        top: 5px;
+        right: 52px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+        
+    }
+
+    #SocialsCloseButton {
+        position: absolute;
+        top: 5px;
+        right: 4px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+
+
+        text-align: center;
+        text-decoration: none;
+        color: inherit; 
+        
+    }
+    #fullscreenPopupSocials{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+    #originalSizePopupSocials{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1); 
+        width: 18px;
+        height: 18px;
+        display: none;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+#SocialsInsideBox{
+    position: inherit;
+    top: 58px;
+    border: 1px solid #292929;
+    width: calc(100% - 17px);
+
+    height: 203px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    
+    overflow-y: none;
+    display: block;
+    background-color: #fff6f6;
+    scrollbar-color: #b9b9b9 #fff6f6;
+    border-top: 3px solid rgba(0, 0, 0, 0.75);
+    border-left: 3px solid rgba(0, 0, 0, 0.75);
+    border-bottom: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+}
+    #SocialsSquareContainer{
+        position: inherit;
+        display: grid;
+        gap: 50px;
+        top: 10px;
+        left: 10px;
+        grid-template-rows: repeat(6, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-flow: row;
+    }
+
+        .SocialsSquare{
+            position: static;
+            top: 0;
+            left: 0;
+            width: 75px;
+            height: 75px;
+            cursor: pointer;
+            background-color:transparent;
+        }
+            .SocialsBrowserIcons{
+                width: 75px;
+                height: 75px;
+            }
+                .SocialsButtonText{
+                    position:relative;
+                    background-color: rgba(0, 0, 0, .35);
+                    text-align: center;
+                    color: #fff6f6;
+                    top: -15px;
+                }
+    
+#SocialsFooterBox{
+    position: inherit;
+    bottom: 0px;
+    border: 1px solid #292929;
+    width: calc(100% - 12px);
+    height: 20px;
+    margin-left: 3px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+
+    display: block;
+    background-color: #b1b1b1;
+    scrollbar-color: #9c9c9c #fff6f6;
+    border-top: 2px solid rgba(0, 0, 0, 0.75);
+    border-left: 2px solid rgba(0, 0, 0, 0.75);
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+
+    #SocialFooterText1{
+        position: absolute;
+        left: 5px;
+        bottom: -15px;
+    }
+    #SocialFooterText2{
+        position: absolute;
+        right: 5px;
+        bottom: -15px;
+
+    }
+/* #endregion Socials */
+/* #region CVPopup */
+#CVPopup{
+    left: 500px;
+    top: 170px;
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    margin: -1 -1 -1 -1;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 10;
+    background-color: #b9b9b9;
+    
+}
+    #CVPopupTitleBox{
+        position: relative;
+        margin: 2px;
+        height: 30px;
+        width:auto;
+        border: none;
+        display: flex;
+    
+        background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0.3)); 
+    }
+    #CVPopupTitle{
+        position: relative;
+        left: 5px;
+    
+        top: -10px;
+    
+        font-weight: bolder;
+        color:#f3f3f3;
+    
+    }
+
+    #CVMinimizeButton {
+        position: absolute;
+        top: 5px;
+        right: 52px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+        
+    }
+
+    #CVCloseButton {
+        position: absolute;
+        top: 5px;
+        right: 4px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+
+
+        text-align: center;
+        text-decoration: none;
+        color: inherit; 
+        
+    }
+    #fullscreenPopupCV{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+    #originalSizePopupCV{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1); 
+        width: 18px;
+        height: 18px;
+        display: none;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+
+#CVDownloadButton {
+    position: inherit;
+    left: 5px;
+    top: 35px;
+    width: 150px;
+    height: 25px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+ }
+ #CVDownloadButton:hover {
+    background-color: #cccccc;
+}
+
+#CVDownloadButtonText {
+    position:relative;
+    background-color: transparent;
+    text-align: center;
+    font-weight: bold;
+    font-family: inherit;;
+    color: #000000;
+    top: -10px; 
+}
+#CVInsideBox{
+    position: inherit;
+    top: 67px;
+    left: 5px;
+    border: 0px solid #292929;
+
+    height: calc(100% - 75px);
+    width: calc(100% - 15px);
+    margin-top: 0px;
+  
+    margin-bottom: 5px;
+    margin-right: 5px;
+    background-color: #fff6f6;
+    
+    scrollbar-color: #b9b9b9 #fff6f6;
+    display: block;
+ 
+}
+#CVFile{
+    position: inherit;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    left: 2px;
+    top: 2px;
+}
+/* #endregion CVPopup */
+
+/* #region Certifications */
+
+
+#CertificationsPopup{
+    left: 800px;
+    top: 300px;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    margin: -1 -1 -1 -1;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 10;
+    background-color: #b9b9b9;
+    
+}
+    #CertificationsPopupTitleBox{
+        position: relative;
+        margin: 2px;
+        height: 30px;
+        width:auto;
+        border: none;
+        display: flex;
+    
+        background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0.3)); 
+    }
+    #CertificationsPopupTitle{
+        position: relative;
+        left: 5px;
+    
+        top: -10px;
+    
+        font-weight: bolder;
+        color:#f3f3f3;
+    
+    }
+    #CertificationsMinimizeButton {
+        position: absolute;
+        top: 5px;
+        right: 52px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+        
+    }
+
+    #CertificationsCloseButton {
+        position: absolute;
+        top: 5px;
+        right: 4px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+
+
+        text-align: center;
+        text-decoration: none;
+        color: inherit; 
+        
+    }
+    #fullscreenPopupCertifications{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+    #originalSizePopupCertifications{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1); 
+        width: 18px;
+        height: 18px;
+        display: none;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+#CertificationsInsideBox{
+    position: inherit;
+    top: 58px;
+    border: 1px solid #292929;
+    width: calc(100% - 17px);
+
+    height: 203px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    
+    overflow-y: none;
+    display: block;
+    background-color: #fff6f6;
+    scrollbar-color: #b9b9b9 #fff6f6;
+    border-top: 3px solid rgba(0, 0, 0, 0.75);
+    border-left: 3px solid rgba(0, 0, 0, 0.75);
+    border-bottom: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+}
+    #CertificationsSquareContainer{
+        position: inherit;
+        display: grid;
+        gap: 50px;
+        top: 10px;
+        left: 10px;
+        grid-template-rows: 3;
+        grid-template-columns: 10;
+        grid-auto-flow: column;
+    }
+
+        .CertificationsSquare{
+            position: static;
+            top: 0;
+            left: 0;
+            width: 75px;
+            height: 75px;
+            cursor: pointer;
+            background-color:transparent;
+        }
+            .CertificationsBrowserIcons{
+                width: 75px;
+                height: 75px;
+            }
+                .CertificationsButtonText{
+                    position:relative;
+                    background-color: rgba(0, 0, 0, .35);
+                    text-align: center;
+                    color: #fff6f6;
+                    top: -15px;
+                }
+    
+#CertificationsFooterBox{
+    position: inherit;
+    bottom: 0px;
+    border: 1px solid #292929;
+    width: calc(100% - 12px);
+    height: 20px;
+    margin-left: 3px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+
+    display: block;
+    background-color: #b1b1b1;
+    scrollbar-color: #9c9c9c #fff6f6;
+    border-top: 2px solid rgba(0, 0, 0, 0.75);
+    border-left: 2px solid rgba(0, 0, 0, 0.75);
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+
+    #CertificationsFooterText1{
+        position: absolute;
+        left: 5px;
+        bottom: -15px;
+    }
+    #CertificationsFooterText2{
+        position: absolute;
+        right: 5px;
+        bottom: -15px;
+
+    }
+
+
+/* #endregion Certifications */
+
+/* #region Projects */
+#ProjectsPopup{
+    left: 150px;
+    top: 350px;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    margin: -1 -1 -1 -1;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 10;
+    background-color: #b9b9b9;
+    
+}
+    #ProjectsPopupTitleBox{
+        position: relative;
+        margin: 2px;
+        height: 30px;
+        width:auto;
+        border: none;
+        display: flex;
+    
+        background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0.3)); 
+    }
+    #ProjectsPopupTitle{
+        position: relative;
+        left: 5px;
+    
+        top: -10px;
+    
+        font-weight: bolder;
+        color:#f3f3f3;
+    
+    }
+    #ProjectsMinimizeButton {
+        position: absolute;
+        top: 5px;
+        right: 52px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+        
+    }
+
+    #ProjectsCloseButton {
+        position: absolute;
+        top: 5px;
+        right: 4px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+
+        text-align: center;
+        text-decoration: none;
+        color: inherit; 
+        
+    }
+    #fullscreenPopupProjects{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+    #originalSizePopupProjects{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1); 
+        width: 18px;
+        height: 18px;
+        display: none;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+#ProjectsInsideBox{
+    position: inherit;
+    top: 58px;
+    border: 1px solid #292929;
+    width: calc(100% - 17px);
+
+    height: 203px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    
+    overflow-y: none;
+    display: block;
+    background-color: #fff6f6;
+    scrollbar-color: #b9b9b9 #fff6f6;
+    border-top: 3px solid rgba(0, 0, 0, 0.75);
+    border-left: 3px solid rgba(0, 0, 0, 0.75);
+    border-bottom: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+}
+    #ProjectsSquareContainer{
+        position: inherit;
+        display: grid;
+        gap: 50px;
+        top: 10px;
+        left: 10px;
+        grid-template-rows: repeat(6, 1fr);  /* Three rows of equal size */
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-flow: row;
+    }
+
+        .ProjectsSquare{
+            position: static;
+            top: 0;
+            left: 0;
+            width: 75px;
+            height: 75px;
+            cursor: pointer;
+            background-color:transparent;
+        }
+            .ProjectsBrowserIcons{
+                width: 75px;
+                height: 75px;
+            }
+                .ProjectsButtonText{
+                    position:relative;
+                    background-color: rgba(0, 0, 0, .35);
+                    text-align: center;
+                    color: #fff6f6;
+                    top: -15px;
+                }
+    
+#ProjectsFooterBox{
+    position: inherit;
+    bottom: 0px;
+    border: 1px solid #292929;
+    width: calc(100% - 12px);
+    height: 20px;
+    margin-left: 3px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+
+    display: block;
+    background-color: #b1b1b1;
+    scrollbar-color: #9c9c9c #fff6f6;
+    border-top: 2px solid rgba(0, 0, 0, 0.75);
+    border-left: 2px solid rgba(0, 0, 0, 0.75);
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+
+    #ProjectsFooterText1{
+        position: absolute;
+        left: 5px;
+        bottom: -15px;
+    }
+    #ProjectsFooterText2{
+        position: absolute;
+        right: 5px;
+        bottom: -15px;
+
+    }
+/* #endregion Projects */
+
+
+
+/* #region Recyclebin */
+#RecyclebinPopup{
+    left: 350px;
+    top: 200px;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    margin: -1 -1 -1 -1;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 10;
+    background-color: #b9b9b9;
+    
+}
+    #RecyclebinPopupTitleBox{
+        position: relative;
+        margin: 2px;
+        height: 30px;
+        width:auto;
+        border: none;
+        display: flex;
+    
+        background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0.3)); 
+    }
+    #RecyclebinPopupTitle{
+        position: relative;
+        left: 5px;
+    
+        top: -10px;
+    
+        font-weight: bolder;
+        color:#f3f3f3;
+    
+    }
+    #RecyclebinMinimizeButton {
+        position: absolute;
+        top: 5px;
+        right: 52px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+        
+    }
+
+    #RecyclebinCloseButton {
+        position: absolute;
+        top: 5px;
+        right: 4px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+
+
+        text-align: center;
+        text-decoration: none;
+        color: inherit; 
+        
+    }
+    #fullscreenPopupRecyclebin{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+    #originalSizePopupRecyclebin{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1); 
+        width: 18px;
+        height: 18px;
+        display: none;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+#RecyclebinInsideBox{
+    position: inherit;
+    top: 58px;
+    border: 1px solid #292929;
+    width: calc(100% - 17px);
+
+    height: 203px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    
+    overflow-y: none;
+    display: block;
+    background-color: #fff6f6;
+    scrollbar-color: #b9b9b9 #fff6f6;
+    border-top: 3px solid rgba(0, 0, 0, 0.75);
+    border-left: 3px solid rgba(0, 0, 0, 0.75);
+    border-bottom: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+}
+    #RecyclebinSquareContainer{
+        position: inherit;
+        display: grid;
+        gap: 50px;
+        top: 10px;
+        left: 10px;
+        grid-template-rows: 3;
+        grid-template-columns: 10;
+        grid-auto-flow: column;
+    }
+
+        .RecyclebinSquare{
+            position: static;
+            top: 0;
+            left: 0;
+            width: 75px;
+            height: 75px;
+            cursor: pointer;
+            background-color:transparent;
+        }
+            .RecyclebinBrowserIcons{
+                width: 75px;
+                height: 75px;
+            }
+                .RecyclebinButtonText{
+                    position:relative;
+                    background-color: rgba(0, 0, 0, .35);
+                    text-align: center;
+                    color: #fff6f6;
+                    top: -15px;
+                }
+    
+#RecyclebinFooterBox{
+    position: inherit;
+    bottom: 0px;
+    border: 1px solid #292929;
+    width: calc(100% - 12px);
+    height: 20px;
+    margin-left: 3px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+
+    display: block;
+    background-color: #b1b1b1;
+    scrollbar-color: #9c9c9c #fff6f6;
+    border-top: 2px solid rgba(0, 0, 0, 0.75);
+    border-left: 2px solid rgba(0, 0, 0, 0.75);
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+
+    #RecyclebinFooterText1{
+        position: absolute;
+        left: 5px;
+        bottom: -15px;
+    }
+    #RecyclebinFooterText2{
+        position: absolute;
+        right: 5px;
+        bottom: -15px;
+
+    }
+
+
+/* #endregion Recyclebin */
+

@@ -1,0 +1,179 @@
+
+#ErrorPopup{
+    left: 250px;
+    top: 100px;
+    position: absolute;
+    width: 250px;
+    height: 210px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    margin: -1 -1 -1 -1;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 10000000;
+    background-color: #b9b9b9;
+    
+}
+    #ErrorPopupTitleBox{
+        position: relative;
+        margin: 2px;
+        height: 30px;
+        width:auto;
+        border: none;
+        display: flex;
+    
+        background: linear-gradient(to right, rgba(0, 0, 255, 1), rgba(0, 0, 255, 0.3)); 
+    }
+    #ErrorPopupTitle{
+        position: relative;
+        left: 5px;
+    
+        top: -10px;
+    
+        font-weight: bolder;
+        color:#f3f3f3;
+    
+    }
+
+    #ErrorMinimizeButton {
+        position: absolute;
+        top: 5px;
+        right: 52px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+        
+    }
+
+    #ErrorCloseButton {
+        position: absolute;
+        top: 5px;
+        right: 4px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+
+        text-align: center;
+        text-decoration: none;
+        color: inherit; 
+        
+    }
+    #fullscreenPopupError{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1);
+        width: 18px;
+        height: 18px;
+        display: block;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+    #originalSizePopupError{
+        position: absolute;
+        top: 5px;
+        right: 28px;
+        cursor: pointer;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+        box-shadow: .5px .5px 0px rgba(0, 0, 0, 1); 
+        width: 18px;
+        height: 18px;
+        display: none;
+        justify-content: right;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f3f3f3;
+    }
+#ErrorInsideBox{
+    position: inherit;
+    top: 36px;
+    left: 4px;
+    border: 1px solid #292929;
+    width: calc(100% - 10px);
+    height: calc(100% - 40px);
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    background-color: #fff6f6;
+   
+    scrollbar-color: #b9b9b9 #fff6f6;
+    display: block;
+ 
+}
+
+.erroricon{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+
+
+
+
+
+#Errortext{
+    position: absolute;
+    font-weight: bolder;
+    top: 15px;
+    left: 55px;
+}
+#Errortext2{
+    position: absolute;
+    font-weight: bolder;
+    top: 60px;
+    left: 15px;
+}
+
+#ErrorButton {
+    position: inherit;
+    left: 80px;
+    bottom: 5px;
+    width: 80px;
+    height: 25px;
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+    border-right: 3px solid rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+ }

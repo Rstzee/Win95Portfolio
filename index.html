@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Rustee OS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="error.css">
+</head>
+
+<body id="mainbody">
+<!-- #region header -->
+<div id="header">
+  <p id="OStitle">RusteeOS</p>
+</div>
+<!-- #endregion header -->
+
+<!-- #region taskbar -->
+
+<div id="taskbar">
+  <div id=datetimeContainer><p id="datetime"></p>
+    <script>
+      const timeElement = document.getElementById("datetime");
+    
+          function updateTime() {
+              const currentTime = new Date();
+              timeElement.innerHTML = currentTime.toLocaleString();
+          }
+          
+          updateTime();
+          setInterval(updateTime, 1000); // Update time every second
+    </script>
+  </div>
+
+
+
+
+    <div id="taskbarAppContainer">
+      
+        <a href="#" id="taskbarAboutme" onclick="maximizePopupAboutMe()"><img src="photos/aboutMe.png" class="taskbarIcon"> &nbspAboutMe.txt</a>
+        <a href="#"  id="taskbarCV" onclick="maximizePopupCV()"><img src="photos/cv.png" class="taskbarIcon">&nbsp Rustee CV</a>
+        <a href="#"  id="taskbarCertifications" onclick="maximizePopupCertifications()"><img src="photos/Certifications.png" class="taskbarIcon">&nbsp Certifications</a>
+        <a href="#"  id="taskbarProjects" onclick="maximizePopupProjects()"><img src="photos/folder.png" class="taskbarIcon">&nbsp Projects</a>
+        <a href="#"  id="taskbarSocials" onclick="maximizePopupSocials()"><img src="photos/folder.png" class="taskbarIcon">&nbsp Socials</a>
+        <a href="#"  id="taskbarRecyclebin" onclick="maximizePopupRecyclebin()"><img src="photos/RecycleBin.png" class="taskbarIcon">&nbsp Recycle Bin</a>
+     
+    </div>
+</div>
+
+          <!-- #region startButton-->
+
+          <button id="startButton" onclick="showPopupStart()">Start</button>
+          <button id="startCloseButton" onclick="hidePopupStart()">&nbsp</button>
+          <div id="startButtonPopup">
+              <div id="verticalTitleStart">
+                <p id="startTitleText">RusteeOS</p>
+              </div>
+
+              <div id="startAppGridContainer">
+                <a href="#" id="startAppShutdown" onclick="closeWindow()" class="startappButton"><img src="photos/shutdown.png" class="appStartIcon"> <p class="appStartText">&nbsp Sh<u>u</u>tdown</p> </a>
+                <a href="#" id="startAppAboutme" onclick="showPopupAboutMe()" class="startappButton"><img src="photos/aboutMe.png" class="appStartIcon"> <p class="appStartText">&nbsp <u>A</u>boutMe.txt</p> </a>
+                <a href="#" id="startAppCV" onclick="showPopupCV()"  class="startappButton"><img src="photos/cv.png" class="appStartIcon"> <p class="appStartText">&nbsp <u>C</u>urriculum Vitae</p> </a>
+                <a href="#" id="startAppCertifications" onclick="showPopupCertifications()" class="startappButton"><img src="photos/Certifications.png" class="appStartIcon"> <p class="appStartText">&nbsp C<u>e</u>rtifications</p> </a>
+                <a href="#" id="startAppProjects" onclick="showPopupProjects()" class="startappButton"><img src="photos/folder.png" class="appStartIcon"> <p class="appStartText">&nbsp <u>P</u>rojects</p> </a>
+                <a href="#" id="startAppSocials" onclick="showPopupSocials()" class="startappButton"><img src="photos/folder.png" class="appStartIcon"> <p class="appStartText">&nbsp <u>S</u>ocials</p> </a>
+                <a href="#" id="startAppRecycleBin" onclick="showPopupRecyclebin()" class="startappButton"><img src="photos/RecycleBin.png" class="appStartIcon"> <p class="appStartText">&nbsp <u>R</u>ecycle Bin</p> </a>
+                
+                <script>
+                  function closeWindow() {
+                    if (confirm("Are you sure you want to close this tab?")) {
+                      window.close();
+                    }
+                  }</script>
+              </div>
+            
+          </div>
+          <script>
+            function showPopupStart() {
+              document.getElementById("startCloseButton").style.display = "block",
+              document.getElementById("startButtonPopup").style.display = "block";
+              
+            }
+            
+            function hidePopupStart() {
+              document.getElementById("startCloseButton").style.display = "none",
+              document.getElementById("startButtonPopup").style.display = "none";
+            }
+            </script>
+
+
+
+          <!-- #endregion startButton-->
+<!-- #endregion taskbar -->
+<!-- #region Exe buttons-->
+<div class="gridContainer">
+    <div class="squareSample">
+        <img src="photos/aboutMe.png" type="button" class="buttonexe" text-align="center" onclick="showPopupAboutMe()"><p class="buttontext">AboutMe</p>
+    </div>
+
+  <div class="squareSample">
+    <img src="photos/cv.png" type="button" class="buttonexe" text-align="center" onclick="showPopupCV()" ><p class="buttontext">CV</p>
+  </div>
+  <div class="squareSample">
+    <img src="photos/Certifications.png" type="button" class="buttonexe" text-align="center" onclick="showPopupCertifications()" ><p class="buttontext">Certifi-<br>cations</p>
+  </div>
+  <div class="squareSample">
+    <img src="photos/folder.png" type="button" class="buttonexe" text-align="center" onclick="showPopupProjects()"><p class="buttontext">Projects</p>
+  </div>
+  <div class="squareSample">
+    <img src="photos/folder.png" type="button" class="buttonexe" text-align="center" onclick="showPopupSocials()"><p class="buttontext">Socials</p>
+  </div>
+  <div class="squareSample">
+    <img src="photos/RecycleBin.png" type="button" class="buttonexe" text-align="center" onclick="showPopupRecyclebin()" ><p class="buttontext">Recycle<br>Bin</p>
+  </div>
+    <div class="squaresample"></div>
+    <div class="squaresample"></div>
+  </div>
+<!-- #endregion Exe buttons-->
+
+
+    
+ 
+<!-- #region popupWindows -->
+
+    <!-- #region AboutMePopup -->
+    <div id="AboutMePopup" class="allPopup">
+      
+      <div id="AboutMePopupTitleBox" >
+          <p id="AboutMePopupTitle">AboutMe</p>
+          <a href="#" id="AboutMeCloseButton" onclick="hidePopupAboutMe()">x</a>
+          <a href="#" id="AboutMeMinimizeButton" onclick="minimizePopupAboutMe()"><div class="minimizeButton"></div></a>
+          <a href="#" id="fullscreenPopupAboutMe" onclick="fullscreenPopupAboutMe()"><div class="maximizeButton"></div></a>
+          <a href="#" id="originalSizePopupAboutme" onclick="originalSizePopupAboutMe()"><div class="windowedButton1"></div><div class="windowedButton2"></div></a>
+      </div>
+      <div id="AboutMeInsideBox">
+        <p style="margin: 7px; text-align: center; font-family: Courier New, monospace" >
+          ------------------------------<br>
+          <b>Rustee Jay, an IT Student<br>
+          2024<br></b>
+          ------------------------------<br>
+          </p>
+          <p style="margin: 7px; text-align: justify; font-family: Courier New, monospace">
+          
+          <br>&nbsp;&nbsp;&nbsp;Have you ever wondered how a series of zeros and ones can be transformed into a captivating image displayed on a screen?
+          That's what fascinates me about computers! 
+          <br><br>
+          &nbsp;&nbsp;&nbsp;Hey there! I'm <B>Rustee Jay Tolentino</B>, a second-year Bachelor of Science in Information Technology student with a fascination for how computers work and the artistic potential they hold.
+          <br><br>
+          &nbsp;&nbsp;&nbsp;Beyond the technical aspects, I'm passionate about the artistic potential of technology.
+            My background in graphic design, traditional arts, and even tattoos allows me to approach user interface design and visualization with a unique perspective.
+            I believe this creative lens is invaluable in the ever-evolving field of IT.</p> 
+
+      </div>
+    </div>
+    <script>
+
+
+      function showPopupAboutMe() {
+        document.getElementById("AboutMePopup").style.display = "block";
+        document.getElementById("taskbarAboutme").style.display = "block";
+        zoo++; 
+      }
+      
+      function hidePopupAboutMe() {
+        document.getElementById("AboutMePopup").style.display = "none";
+        document.getElementById("taskbarAboutme").style.display = "none";
+      }
+
+      function minimizePopupAboutMe() {
+        document.getElementById("AboutMePopup").style.display = "none";
+      }
+      function maximizePopupAboutMe() {
+        document.getElementById("AboutMePopup").style.display = "block";
+      }
+      function fullscreenPopupAboutMe() {
+        document.getElementById("AboutMePopup").style.width = "100%";
+        document.getElementById("AboutMePopup").style.height = "calc(100vh - 32px)";
+        document.getElementById("AboutMePopup").style.zIndex = "111";
+        document.getElementById("AboutMePopup").style.position = "fixed";
+        document.getElementById("AboutMePopup").style.top = "30px";
+        document.getElementById("AboutMePopup").style.left = "0";
+        document.getElementById("AboutMePopup").style.boxShadow = "none";
+        document.getElementById("fullscreenPopupAboutMe").style.display = "none";
+        document.getElementById("originalSizePopupAboutme").style.display = "block";
+        document.getElementById("AboutMeInsideBox").style.top = "68px";
+        document.getElementById("AboutMeInsideBox").style.height = "calc(100% - 82px)";
+        
+      }
+      function originalSizePopupAboutMe() {
+        document.getElementById("AboutMePopup").style.width = "400px";
+        document.getElementById("AboutMePopup").style.height = "500px";
+        document.getElementById("AboutMePopup").style.zIndex = "10";
+        document.getElementById("AboutMePopup").style.position = "absolute";
+        document.getElementById("AboutMePopup").style.top = "100px";
+        document.getElementById("AboutMePopup").style.left = "200px";
+        document.getElementById("AboutMePopup").style.boxShadow = ".5px .5px 0px rgba(0, 0, 0, 1)";
+        document.getElementById("fullscreenPopupAboutMe").style.display = "block";
+        document.getElementById("originalSizePopupAboutme").style.display = "none";
+
+        document.getElementById("AboutMeInsideBox").style.top = "36px";
+        document.getElementById("AboutMeInsideBox").style.height = "calc(100% - 40px)";
+        
+      }
+
+
+      
+      </script>
+    <!-- #endregion AboutMePopup-->
+    <!-- #region Socials -->
+    <div id="SocialsPopup"  class="allPopup">
+      
+      <div id="SocialsPopupTitleBox">
+          <p id="SocialsPopupTitle">Socials</p>
+        
+          <a href="#" id="SocialsCloseButton" onclick="hidePopupSocials()">x</a>
+          <a href="#" id="SocialsMinimizeButton" onclick="minimizePopupSocials()"><div class="minimizeButton"></div></a>
+          <a href="#" id="fullscreenPopupSocials" onclick="fullscreenPopupSocials()"><div class="maximizeButton"></div></a>
+          <a href="#" id="originalSizePopupSocials" onclick="originalSizePopupSocials()"><div class="windowedButton1"></div><div class="windowedButton2"></div></a>
+
+
+      </div>
+      <div id="SocialsInsideBox">
+        <div id="SocialsSquareContainer">
+          <div class="SocialsSquare"><a href="https://www.linkedin.com/in/rusteejay" target="_blank"><img src="photos/linkedin.png" class="SocialsBrowserIcons"></a><p class="SocialsButtonText">LinkedIn</p></div>
+          <div class="SocialsSquare"><a href="https://github.com/Rstzee " target="_blank"><img src="photos/github.png" class="SocialsBrowserIcons"></a><p class="SocialsButtonText">Github</p></div>
+          <div class="SocialsSquare"><a href="mailto:rusteetheone@gmail.com"target="_blank"><img src="photos/email.png" class="SocialsBrowserIcons"></a><p class="SocialsButtonText">Email</p></div>
+        </div>
+      </div>
+
+
+
+
+      <div id="SocialsFooterBox">
+      <p id="SocialFooterText1"> Object(s) 3 (0 hidden)</p>
+      <p id="SocialFooterText2"> 234 Bytes</p>
+      </div>
+
+    </div>
+    <script>
+      function showPopupSocials() {
+        document.getElementById("SocialsPopup").style.display = "block";
+        document.getElementById("taskbarSocials").style.display = "block";
+      }
+      
+      function hidePopupSocials() {
+        document.getElementById("SocialsPopup").style.display = "none";
+        document.getElementById("taskbarSocials").style.display = "none";
+      }
+
+      function minimizePopupSocials() {
+        document.getElementById("SocialsPopup").style.display = "none";
+      }
+      function maximizePopupSocials() {
+        document.getElementById("SocialsPopup").style.display = "block";
+      }
+      
+      function fullscreenPopupSocials() {
+        document.getElementById("SocialsPopup").style.width = "100%";
+        document.getElementById("SocialsPopup").style.height = "calc(100vh - 33px)";
+        document.getElementById("SocialsPopup").style.zIndex = "111";
+        document.getElementById("SocialsPopup").style.position = "fixed";
+        document.getElementById("SocialsPopup").style.top = "30px";
+        document.getElementById("SocialsPopup").style.left = "0";
+        document.getElementById("SocialsPopup").style.boxShadow = "none";
+
+        document.getElementById("fullscreenPopupSocials").style.display = "none";
+        document.getElementById("originalSizePopupSocials").style.display = "block";
+
+        document.getElementById("SocialsInsideBox").style.top = "88px";
+        document.getElementById("SocialsInsideBox").style.height = "calc(100% - 130px)";
+
+        document.getElementById("SocialsFooterBox").style.bottom = "2px";
+
+        document.getElementById("SocialsSquareContainer").style.top = "98px";
+        document.getElementById("SocialsSquareContainer").style.left = "20px";
+
+      }
+      function originalSizePopupSocials() {
+        document.getElementById("SocialsPopup").style.width = "400px";
+        document.getElementById("SocialsPopup").style.height = "300px";
+        document.getElementById("SocialsPopup").style.zIndex = "10";
+        document.getElementById("SocialsPopup").style.position = "absolute";
+        document.getElementById("SocialsPopup").style.top = "150px";
+        document.getElementById("SocialsPopup").style.left = "750px";
+        document.getElementById("SocialsPopup").style.boxShadow = ".5px .5px 0px rgba(0, 0, 0, 1)";
+
+        document.getElementById("fullscreenPopupSocials").style.display = "block";
+        document.getElementById("originalSizePopupSocials").style.display = "none";
+
+        document.getElementById("SocialsInsideBox").style.top = "58px";
+        document.getElementById("SocialsInsideBox").style.height = "203px";
+
+        document.getElementById("SocialsFooterBox").style.bottom = "0px";
+
+        document.getElementById("SocialsSquareContainer").style.top = "10px";
+        document.getElementById("SocialsSquareContainer").style.left = "10px";
+
+      }
+      </script>
+    <!-- #endregion SocialsPopup-->
+    <!-- #region Projects -->
+    <div id="ProjectsPopup"  class="allPopup">
+      
+      <div id="ProjectsPopupTitleBox">
+          <p id="ProjectsPopupTitle">Projects</p>
+        
+          <a href="#" id="ProjectsCloseButton" onclick="hidePopupProjects()">x</a>
+          <a href="#" id="ProjectsMinimizeButton" onclick="minimizePopupProjects()"><div class="minimizeButton"></div></a>
+          <a href="#" id="fullscreenPopupProjects" onclick="fullscreenPopupProjects()"><div class="maximizeButton"></div></a>
+          <a href="#" id="originalSizePopupProjects" onclick="originalSizePopupProjects()"><div class="windowedButton1"></div><div class="windowedButton2"></div></a>
+
+      </div>
+      <div id="ProjectsInsideBox">
+        <div id="ProjectsSquareContainer">
+          <div class="ProjectsSquare"><a href="https://rstzee.github.io/aboutme/" target="_blank"><img src="photos/projectlogo1.png" class="ProjectsBrowserIcons"></a><p class="ProjectsButtonText">Game Page</p></div>
+
+        </div>
+      </div>
+
+
+
+      <div id="ProjectsFooterBox">
+      <p id="ProjectsFooterText1"> Object(s) 1 (0 hidden)</p>
+      <p id="ProjectsFooterText2"> 143 Byte(s)</p>
+      </div>
+
+    </div>
+    <script>
+      function showPopupProjects() {
+        document.getElementById("ProjectsPopup").style.display = "block";
+        document.getElementById("taskbarProjects").style.display = "block";
+      }
+      
+      function hidePopupProjects() {
+        document.getElementById("ProjectsPopup").style.display = "none";
+        document.getElementById("taskbarProjects").style.display = "none";
+      }
+
+      function minimizePopupProjects() {
+        document.getElementById("ProjectsPopup").style.display = "none";
+      }
+      function maximizePopupProjects() {
+        document.getElementById("ProjectsPopup").style.display = "block";
+      }
+      
+      function fullscreenPopupProjects() {
+        document.getElementById("ProjectsPopup").style.width = "100%";
+        document.getElementById("ProjectsPopup").style.height = "calc(100vh - 33px)";
+        document.getElementById("ProjectsPopup").style.zIndex = "111";
+        document.getElementById("ProjectsPopup").style.position = "fixed";
+        document.getElementById("ProjectsPopup").style.top = "30px";
+        document.getElementById("ProjectsPopup").style.left = "0";
+        document.getElementById("ProjectsPopup").style.boxShadow = "none";
+
+        document.getElementById("fullscreenPopupProjects").style.display = "none";
+        document.getElementById("originalSizePopupProjects").style.display = "block";
+
+        document.getElementById("ProjectsInsideBox").style.top = "88px";
+        document.getElementById("ProjectsInsideBox").style.height = "calc(100% - 130px)";
+
+        document.getElementById("ProjectsFooterBox").style.bottom = "2px";
+
+        document.getElementById("ProjectsSquareContainer").style.top = "98px";
+        document.getElementById("ProjectsSquareContainer").style.left = "20px";
+
+      }
+      function originalSizePopupProjects() {
+        document.getElementById("ProjectsPopup").style.width = "400px";
+        document.getElementById("ProjectsPopup").style.height = "300px";
+        document.getElementById("ProjectsPopup").style.zIndex = "10";
+        document.getElementById("ProjectsPopup").style.position = "absolute";
+        document.getElementById("ProjectsPopup").style.top = "350px";
+        document.getElementById("ProjectsPopup").style.left = "150px";
+        document.getElementById("ProjectsPopup").style.boxShadow = ".5px .5px 0px rgba(0, 0, 0, 1)";
+
+        document.getElementById("fullscreenPopupProjects").style.display = "block";
+        document.getElementById("originalSizePopupProjects").style.display = "none";
+
+        document.getElementById("ProjectsInsideBox").style.top = "58px";
+        document.getElementById("ProjectsInsideBox").style.height = "203px";
+
+        document.getElementById("ProjectsFooterBox").style.bottom = "0px";
+
+        document.getElementById("ProjectsSquareContainer").style.top = "10px";
+        document.getElementById("ProjectsSquareContainer").style.left = "10px";
+
+      }
+      </script>
+    <!-- #endregion ProjectsPopup-->
+    <!-- #region CV -->
+    <div id="CVPopup" class="allPopup">
+      <div id="CVPopupTitleBox" >
+          <p id="CVPopupTitle">CV</p>
+          <a href="#" id="CVCloseButton" onclick="hidePopupCV()">x</a>
+          <a href="#" id="CVMinimizeButton" onclick="minimizePopupCV()"><div class="minimizeButton"></div></a>
+          <a href="#" id="fullscreenPopupCV" onclick="fullscreenPopupCV()"><div class="maximizeButton"></div></a>
+          <a href="#" id="originalSizePopupCV" onclick="originalSizePopupCV()"><div class="windowedButton1"></div><div class="windowedButton2"></div></a>
+      </div>
+      
+      <a href="files/RusteeCV.pdf" download="CV.pdf" id="CVDownloadButton" target="_blank"> 
+        
+          <p id="CVDownloadButtonText">Open in new tab</p>
+        
+      </a>
+      <div id="CVInsideBox">
+        <iframe src="files/RusteeCV.pdf" id="CVFile"></iframe>
+      </div>
+    </div>
+    <script>
+      function showPopupCV() {
+        document.getElementById("CVPopup").style.display = "block";
+        document.getElementById("taskbarCV").style.display = "block";
+      }
+      
+      function hidePopupCV() {
+        document.getElementById("CVPopup").style.display = "none";
+        document.getElementById("taskbarCV").style.display = "none";
+      }
+
+      function minimizePopupCV() {
+        document.getElementById("CVPopup").style.display = "none";
+      }
+      function maximizePopupCV() {
+        document.getElementById("CVPopup").style.display = "block";
+      }
+      function fullscreenPopupCV() {
+        document.getElementById("CVPopup").style.width = "100%";
+        document.getElementById("CVPopup").style.height = "calc(100vh - 32px)";
+        document.getElementById("CVPopup").style.zIndex = "111";
+        document.getElementById("CVPopup").style.position = "fixed";
+        document.getElementById("CVPopup").style.top = "30px";
+        document.getElementById("CVPopup").style.left = "0";
+        document.getElementById("CVPopup").style.boxShadow = "none";
+        document.getElementById("fullscreenPopupCV").style.display = "none";
+        document.getElementById("originalSizePopupCV").style.display = "block";
+
+        document.getElementById("CVInsideBox").style.top = "98px";
+        document.getElementById("CVInsideBox").style.height = "calc(100% - 105px)"; 
+        document.getElementById("CVInsideBox").style.width = "calc(100% - 10px)"; 
+
+        document.getElementById("CVFile").style.width = "calc(100% - 25px )";
+        document.getElementById("CVFile").style.height = "calc(100% - 120px )";
+        document.getElementById("CVFile").style.top = "105px";
+        document.getElementById("CVFile").style.left = "10px";
+        document.getElementById("CVFile").style.display = "block";
+
+        document.getElementById("CVDownloadButton").style.top = "67px";
+        
+      }
+      function originalSizePopupCV() {
+        document.getElementById("CVPopup").style.width = "400px";
+        document.getElementById("CVPopup").style.height = "500px";
+        document.getElementById("CVPopup").style.zIndex = "10";
+        document.getElementById("CVPopup").style.position = "absolute";
+        document.getElementById("CVPopup").style.top = "170px";
+        document.getElementById("CVPopup").style.left = "500px";
+        document.getElementById("CVPopup").style.boxShadow = ".5px .5px 0px rgba(0, 0, 0, 1)";
+        document.getElementById("fullscreenPopupCV").style.display = "block";
+        document.getElementById("originalSizePopupCV").style.display = "none";
+
+        document.getElementById("CVInsideBox").style.top = "67px";
+        document.getElementById("CVInsideBox").style.height = "calc(100% - 75px)";
+        document.getElementById("CVInsideBox").style.width = "calc(100% - 15px)"; 
+
+        document.getElementById("CVFile").style.width = "calc(100% - 10px)";
+        document.getElementById("CVFile").style.height = "calc(100% - 10px)";
+        document.getElementById("CVFile").style.left = "2px";
+        document.getElementById("CVFile").style.top = "2px";
+
+        document.getElementById("CVDownloadButton").style.top = "35px"
+      }
+      </script>
+
+    <!-- #endregion CV -->
+    <!-- #region Certifications-->
+
+    <div id="CertificationsPopup"  class="allPopup">
+      
+      <div id="CertificationsPopupTitleBox">
+          <p id="CertificationsPopupTitle">Certifications</p>
+        
+          <a href="#" id="CertificationsCloseButton" onclick="hidePopupCertifications()">x</a>
+          <a href="#" id="CertificationsMinimizeButton" onclick="minimizePopupCertifications()"><div class="minimizeButton"></div></a>
+          <a href="#" id="fullscreenPopupCertifications" onclick="fullscreenPopupCertifications()"><div class="maximizeButton"></div></a>
+          <a href="#" id="originalSizePopupCertifications" onclick="originalSizePopupCertifications()"><div class="windowedButton1"></div><div class="windowedButton2"></div></a>
+
+
+      </div>
+      <div id="CertificationsInsideBox">
+        <div id="CertificationsSquareContainer">
+          <div class="CertificationsSquare"><a href="files/Cert1.pdf" target="_blank"><img src="photos/cv.png" class="CertificationsBrowserIcons"></a><p class="CertificationsButtonText">Technical...</p></div>
+          <div class="CertificationsSquare"><a href="files/Cert2.pdf" target="_blank"><img src="photos/cv.png" class="CertificationsBrowserIcons"></a><p class="CertificationsButtonText">Bits and...</p></div>
+        </div>
+      </div>
+
+
+
+
+      <div id="CertificationsFooterBox">
+      <p id="CertificationsFooterText1"> Object(s) 2 (0 hidden)</p>
+      <p id="CertificationsFooterText2"> 615 Bytes</p>
+      </div>
+
+    </div>
+    <script>
+      function showPopupCertifications() {
+        document.getElementById("CertificationsPopup").style.display = "block";
+        document.getElementById("taskbarCertifications").style.display = "block";
+      }
+      
+      function hidePopupCertifications() {
+        document.getElementById("CertificationsPopup").style.display = "none";
+        document.getElementById("taskbarCertifications").style.display = "none";
+      }
+
+      function minimizePopupCertifications() {
+        document.getElementById("CertificationsPopup").style.display = "none";
+      }
+      function maximizePopupCertifications() {
+        document.getElementById("CertificationsPopup").style.display = "block";
+      }
+      
+      function fullscreenPopupCertifications() {
+        document.getElementById("CertificationsPopup").style.width = "100%";
+        document.getElementById("CertificationsPopup").style.height = "calc(100vh - 33px)";
+        document.getElementById("CertificationsPopup").style.zIndex = "111";
+        document.getElementById("CertificationsPopup").style.position = "fixed";
+        document.getElementById("CertificationsPopup").style.top = "30px";
+        document.getElementById("CertificationsPopup").style.left = "0";
+        document.getElementById("CertificationsPopup").style.boxShadow = "none";
+
+        document.getElementById("fullscreenPopupCertifications").style.display = "none";
+        document.getElementById("originalSizePopupCertifications").style.display = "block";
+
+        document.getElementById("CertificationsInsideBox").style.top = "88px";
+        document.getElementById("CertificationsInsideBox").style.height = "calc(100% - 130px)";
+
+        document.getElementById("CertificationsFooterBox").style.bottom = "2px";
+
+        document.getElementById("CertificationsSquareContainer").style.top = "98px";
+        document.getElementById("CertificationsSquareContainer").style.left = "20px";
+
+      }
+      function originalSizePopupCertifications() {
+        document.getElementById("CertificationsPopup").style.width = "400px";
+        document.getElementById("CertificationsPopup").style.height = "300px";
+        document.getElementById("CertificationsPopup").style.zIndex = "10";
+        document.getElementById("CertificationsPopup").style.position = "absolute";
+        document.getElementById("CertificationsPopup").style.top = "300px";
+        document.getElementById("CertificationsPopup").style.left = "800px";
+        document.getElementById("CertificationsPopup").style.boxShadow = ".5px .5px 0px rgba(0, 0, 0, 1)";
+
+        document.getElementById("fullscreenPopupCertifications").style.display = "block";
+        document.getElementById("originalSizePopupCertifications").style.display = "none";
+
+        document.getElementById("CertificationsInsideBox").style.top = "58px";
+        document.getElementById("CertificationsInsideBox").style.height = "203px";
+
+        document.getElementById("CertificationsFooterBox").style.bottom = "0px";
+
+        document.getElementById("CertificationsSquareContainer").style.top = "10px";
+        document.getElementById("CertificationsSquareContainer").style.left = "10px";
+
+      }
+      </script>
+
+
+    <!-- #endregion Certifications-->
+    <!-- #region Recyclebin-->
+
+<div id="RecyclebinPopup"  class="allPopup">
+  
+  <div id="RecyclebinPopupTitleBox">
+      <p id="RecyclebinPopupTitle">Recyclebin</p>
+    
+      <a href="#" id="RecyclebinCloseButton" onclick="hidePopupRecyclebin()">x</a>
+      <a href="#" id="RecyclebinMinimizeButton" onclick="minimizePopupRecyclebin()"><div class="minimizeButton"></div></a>
+      <a href="#" id="fullscreenPopupRecyclebin" onclick="fullscreenPopupRecyclebin()"><div class="maximizeButton"></div></a>
+      <a href="#" id="originalSizePopupRecyclebin" onclick="originalSizePopupRecyclebin()"><div class="windowedButton1"></div><div class="windowedButton2"></div></a>
+
+
+  </div>
+  <div id="RecyclebinInsideBox">
+    <div id="RecyclebinSquareContainer">
+      <div class="RecyclebinSquare"></a><img src="photos/Dirty.png" class="RecyclebinBrowserIcons" onclick="showPopupError()"></a><p class="RecyclebinButtonText">Dirty Secret</p></div>
+    </div>
+  </div>
+
+
+
+
+  <div id="RecyclebinFooterBox">
+   <p id="RecyclebinFooterText1"> Object(s) 1 (0 hidden)</p>
+   <p id="RecyclebinFooterText2"> 2001 Bytes</p>
+  </div>
+
+</div>
+<script>
+  function showPopupRecyclebin() {
+    document.getElementById("RecyclebinPopup").style.display = "block";
+    document.getElementById("taskbarRecyclebin").style.display = "block";
+  }
+  
+  function hidePopupRecyclebin() {
+    document.getElementById("RecyclebinPopup").style.display = "none";
+    document.getElementById("taskbarRecyclebin").style.display = "none";
+  }
+
+  function minimizePopupRecyclebin() {
+    document.getElementById("RecyclebinPopup").style.display = "none";
+  }
+  function maximizePopupRecyclebin() {
+    document.getElementById("RecyclebinPopup").style.display = "block";
+  }
+  
+  function fullscreenPopupRecyclebin() {
+    document.getElementById("RecyclebinPopup").style.width = "100%";
+    document.getElementById("RecyclebinPopup").style.height = "calc(100vh - 33px)";
+    document.getElementById("RecyclebinPopup").style.zIndex = "111";
+    document.getElementById("RecyclebinPopup").style.position = "fixed";
+    document.getElementById("RecyclebinPopup").style.top = "30px";
+    document.getElementById("RecyclebinPopup").style.left = "0";
+    document.getElementById("RecyclebinPopup").style.boxShadow = "none";
+
+    document.getElementById("fullscreenPopupRecyclebin").style.display = "none";
+    document.getElementById("originalSizePopupRecyclebin").style.display = "block";
+
+    document.getElementById("RecyclebinInsideBox").style.top = "88px";
+    document.getElementById("RecyclebinInsideBox").style.height = "calc(100% - 130px)";
+
+    document.getElementById("RecyclebinFooterBox").style.bottom = "2px";
+
+    document.getElementById("RecyclebinSquareContainer").style.top = "98px";
+    document.getElementById("RecyclebinSquareContainer").style.left = "20px";
+
+  }
+  function originalSizePopupRecyclebin() {
+    document.getElementById("RecyclebinPopup").style.width = "400px";
+    document.getElementById("RecyclebinPopup").style.height = "300px";
+    document.getElementById("RecyclebinPopup").style.zIndex = "10";
+    document.getElementById("RecyclebinPopup").style.position = "absolute";
+    document.getElementById("RecyclebinPopup").style.top = "300px";
+    document.getElementById("RecyclebinPopup").style.left = "800px";
+    document.getElementById("RecyclebinPopup").style.boxShadow = ".5px .5px 0px rgba(0, 0, 0, 1)";
+
+    document.getElementById("fullscreenPopupRecyclebin").style.display = "block";
+    document.getElementById("originalSizePopupRecyclebin").style.display = "none";
+
+    document.getElementById("RecyclebinInsideBox").style.top = "58px";
+    document.getElementById("RecyclebinInsideBox").style.height = "203px";
+
+    document.getElementById("RecyclebinFooterBox").style.bottom = "0px";
+
+    document.getElementById("RecyclebinSquareContainer").style.top = "10px";
+    document.getElementById("RecyclebinSquareContainer").style.left = "10px";
+
+  }
+  </script>
+
+
+
+    <!--#region error-->
+  
+    <div id="ErrorPopup" class="allPopup">
+  
+      <div id="ErrorPopupTitleBox" >
+          <p id="ErrorPopupTitle">Error</p>
+          <a href="#" id="ErrorCloseButton" onclick="hidePopupError()">x</a>
+
+      </div>
+      <div id="ErrorInsideBox">
+        <img src="photos/erroricon.png" alt="error" class="erroricon">
+        <p style="margin: 7px; text-align: left; font-family: Courier New, monospace" id="Errortext"> 
+          WARNING! <br> <br> </p>        <p style="margin: 7px; text-align: left; font-family: Courier New, monospace" id="Errortext2"> 
+          Virus Detected!<br> would you like to proceed? </p>
+
+
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"  id="ErrorButton" target="_blank"> 
+    
+            <p id="CVDownloadButtonText">Confirm</p>
+          
+        </a>
+    
+      </div>
+    </div>
+    <script>
+    
+      function showPopupError() {
+        document.getElementById("ErrorPopup").style.display = "block";
+        document.getElementById("Error2Popup").style.display = "block";
+   
+      }
+      
+      function hidePopupError() {
+        document.getElementById("ErrorPopup").style.display = "none";
+    
+      }
+    
+      function minimizePopupError() {
+        document.getElementById("ErrorPopup").style.display = "none";
+      }
+      function maximizePopupError() {
+        document.getElementById("ErrorPopup").style.display = "block";
+      }
+    </script>
+    
+    
+    <!-- #endregion error-->
+
+
+
+<!-- #endregion Recyclebin-->
+
+ <!-- #endregion popupWindows -->
+</body>
+</html>
