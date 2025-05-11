@@ -496,7 +496,7 @@ opacity: 80%;
     border-right: 2px solid #000000;
     margin: -1 -1 -1 -1;
     box-shadow: 5px 5px 0px rgba(0, 0, 0, .5);
-    display: none;
+    display: block;
     z-index: 10;
     background-color: #b9b9b9;
     
