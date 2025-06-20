@@ -1604,6 +1604,19 @@ opacity: 80%;
 
     }
 
+@media (max-width: 768px) { /* Adjust breakpoint as needed for mobile devices */
+  body {
+    transform: rotate(90deg);
+    transform-origin: left top; /* Adjust origin for proper positioning */
+    width: 100vh; /* Set width to viewport height for landscape */
+    height: 100vw; /* Set height to viewport width for landscape */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    overflow-x: hidden; /* Hide horizontal scrollbar that might appear */
+  }
+}
+
 
 /* #endregion Recyclebin */
 
